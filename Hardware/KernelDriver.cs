@@ -14,7 +14,7 @@ using System.Runtime.InteropServices;
 using System.Security.AccessControl;
 using Microsoft.Win32.SafeHandles;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal class KernelDriver {
 
     private string id;

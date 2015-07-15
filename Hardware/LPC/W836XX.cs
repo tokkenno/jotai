@@ -12,7 +12,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.LPC {
+namespace Jotai.Hardware.LPC {
   internal class W836XX : ISuperIO {
 
     private readonly ushort address;

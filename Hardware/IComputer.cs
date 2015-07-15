@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   public delegate void HardwareEventHandler(IHardware hardware);
 

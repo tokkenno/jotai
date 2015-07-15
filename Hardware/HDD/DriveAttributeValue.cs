@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
 
   [StructLayout(LayoutKind.Sequential, Pack = 1)]
   internal struct DriveAttributeValue {

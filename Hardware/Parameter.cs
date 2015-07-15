@@ -11,7 +11,7 @@
 using System;
 using System.Globalization;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   internal struct ParameterDescription {
     private readonly string name;

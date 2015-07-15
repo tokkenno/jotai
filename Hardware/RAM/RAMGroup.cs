@@ -10,7 +10,7 @@
 
 using System;
 
-namespace OpenHardwareMonitor.Hardware.RAM {
+namespace Jotai.Hardware.RAM {
   internal class RAMGroup : IGroup {
 
     private Hardware[] hardware;

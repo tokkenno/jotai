@@ -11,7 +11,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OpenHardwareMonitor.Collections {
+namespace Jotai.Collections {
 
   public interface IReadOnlyArray<T> : IEnumerable<T> {
 

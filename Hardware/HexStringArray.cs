@@ -11,7 +11,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal static class HexStringArray {
 
     public static byte Read(string s, ushort address) {

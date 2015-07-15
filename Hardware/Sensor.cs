@@ -13,9 +13,9 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.IO.Compression;
-using OpenHardwareMonitor.Collections;
+using Jotai.Collections;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   internal class Sensor : ISensor {
 

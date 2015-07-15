@@ -13,7 +13,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   internal static class FirmwareTable {
 

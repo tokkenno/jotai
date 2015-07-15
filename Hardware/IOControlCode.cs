@@ -11,7 +11,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   [StructLayout(LayoutKind.Sequential, Pack = 1)]
   internal struct IOControlCode {

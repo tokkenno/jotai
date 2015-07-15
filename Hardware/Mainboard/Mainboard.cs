@@ -10,9 +10,9 @@
 
 using System;
 using System.Text;
-using OpenHardwareMonitor.Hardware.LPC;
+using Jotai.Hardware.LPC;
 
-namespace OpenHardwareMonitor.Hardware.Mainboard {
+namespace Jotai.Hardware.Mainboard {
   internal class Mainboard : IHardware {
     private readonly SMBIOS smbios;
     private readonly string name;

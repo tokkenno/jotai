@@ -11,9 +11,9 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using OpenHardwareMonitor.Hardware.LPC;
+using Jotai.Hardware.LPC;
 
-namespace OpenHardwareMonitor.Hardware.Mainboard {
+namespace Jotai.Hardware.Mainboard {
   internal sealed class SuperIOHardware : Hardware {
 
     private readonly Mainboard mainboard;

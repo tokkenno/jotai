@@ -9,9 +9,9 @@
 */
 
 using System;
-using OpenHardwareMonitor.Collections;
+using Jotai.Collections;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal abstract class Hardware : IHardware {
 
     private readonly Identifier identifier;

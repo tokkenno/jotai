@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.LPC {
+namespace Jotai.Hardware.LPC {
   internal interface ISuperIO {
 
     Chip Chip { get; }

@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   public class Identifier : IComparable<Identifier> {
     private readonly string identifier;
 

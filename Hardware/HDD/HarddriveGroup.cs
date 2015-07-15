@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
   internal class HarddriveGroup : IGroup {
 
     private const int MAX_DRIVES = 32;

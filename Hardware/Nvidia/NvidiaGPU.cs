@@ -13,7 +13,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.Nvidia {
+namespace Jotai.Hardware.Nvidia {
   internal class NvidiaGPU : Hardware {
 
     private readonly int adapterIndex;

@@ -8,9 +8,9 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
   using System.Collections.Generic;
-  using OpenHardwareMonitor.Collections;
+  using Jotai.Collections;
 
   [NamePrefix(""), RequireSmart(0xB1), RequireSmart(0xB3), RequireSmart(0xB5),
     RequireSmart(0xB6), RequireSmart(0xB7), RequireSmart(0xBB), 

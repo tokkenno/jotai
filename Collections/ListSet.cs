@@ -11,7 +11,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace OpenHardwareMonitor.Collections {
+namespace Jotai.Collections {
 
   public class ListSet<T> : IEnumerable<T> {
 

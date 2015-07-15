@@ -12,7 +12,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Reflection;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal static class Opcode {
     
     private static IntPtr codeBuffer;

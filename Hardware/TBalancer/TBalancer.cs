@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.TBalancer {
+namespace Jotai.Hardware.TBalancer {
   internal class TBalancer : Hardware {
 
     private readonly int portIndex;    

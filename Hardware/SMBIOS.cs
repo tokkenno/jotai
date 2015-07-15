@@ -14,7 +14,7 @@ using System.IO;
 using System.Management;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   internal class SMBIOS {
 

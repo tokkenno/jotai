@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
   using System.Collections.Generic;
 
   [NamePrefix("PLEXTOR")]

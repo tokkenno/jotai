@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
 
 #if DEBUG
 

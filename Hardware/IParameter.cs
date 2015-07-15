@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   public interface IParameter : IElement {
 

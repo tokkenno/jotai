@@ -11,7 +11,7 @@
 using System;
 using System.Globalization;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   internal delegate void ControlEventHandler(Control control);
 

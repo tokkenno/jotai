@@ -15,7 +15,7 @@ using System.IO;
 using System.Security.Permissions;
 using System.Reflection;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   public class Computer : IComputer {
 

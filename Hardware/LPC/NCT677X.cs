@@ -12,7 +12,7 @@ using System;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.LPC {
+namespace Jotai.Hardware.LPC {
   internal class NCT677X : ISuperIO {
 
     private readonly ushort port;

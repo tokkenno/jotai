@@ -13,7 +13,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.ATI {
+namespace Jotai.Hardware.ATI {
   internal class ATIGroup : IGroup {
 
     private readonly List<ATIGPU> hardware = new List<ATIGPU>();

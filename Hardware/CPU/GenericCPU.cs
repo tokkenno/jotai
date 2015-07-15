@@ -16,7 +16,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 
-namespace OpenHardwareMonitor.Hardware.CPU {
+namespace Jotai.Hardware.CPU {
   internal class GenericCPU : Hardware {
 
     protected readonly CPUID[][] cpuid;

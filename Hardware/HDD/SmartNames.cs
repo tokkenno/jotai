@@ -9,7 +9,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
   /// <summary>
   /// Localization class for SMART attribute names.
   /// </summary>

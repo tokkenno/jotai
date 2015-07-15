@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.CPU {
+namespace Jotai.Hardware.CPU {
 
   internal abstract class AMDCPU : GenericCPU {
 

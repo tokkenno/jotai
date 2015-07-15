@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   public interface ISettings {
 
     bool Contains(string name);

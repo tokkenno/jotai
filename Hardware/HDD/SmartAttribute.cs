@@ -11,9 +11,9 @@
 
 using System;
 using System.Collections.Generic;
-using OpenHardwareMonitor.Collections;
+using Jotai.Collections;
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
   internal class SmartAttribute {
 
     private RawValueConversion rawValueConversion;

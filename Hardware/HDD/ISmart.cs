@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
 
   internal interface ISmart {
 

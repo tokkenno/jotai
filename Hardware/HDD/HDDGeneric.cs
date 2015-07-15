@@ -13,9 +13,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using OpenHardwareMonitor.Collections;
+using Jotai.Collections;
 
-namespace OpenHardwareMonitor.Hardware.HDD {
+namespace Jotai.Hardware.HDD {
 
   [NamePrefix("")]
   internal class GenericHarddisk : AbstractHarddrive {

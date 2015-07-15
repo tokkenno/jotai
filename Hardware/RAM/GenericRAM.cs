@@ -10,7 +10,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace OpenHardwareMonitor.Hardware.RAM {
+namespace Jotai.Hardware.RAM {
   internal class GenericRAM : Hardware {
 
     private Sensor loadSensor;

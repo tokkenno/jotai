@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.Mainboard {
+namespace Jotai.Hardware.Mainboard {
 
   internal enum Model {
     // ASRock

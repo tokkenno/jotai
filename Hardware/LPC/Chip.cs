@@ -8,7 +8,7 @@
 	
 */
 
-namespace OpenHardwareMonitor.Hardware.LPC {
+namespace Jotai.Hardware.LPC {
 
   internal enum Chip : ushort {
     Unknown = 0,

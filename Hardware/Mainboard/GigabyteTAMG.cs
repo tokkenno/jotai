@@ -15,7 +15,7 @@ using System.IO.Compression;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.Mainboard {
+namespace Jotai.Hardware.Mainboard {
   
   internal class GigabyteTAMG {
     private byte[] table;

@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware.Nvidia {
+namespace Jotai.Hardware.Nvidia {
 
   internal class NvidiaGroup : IGroup {
    

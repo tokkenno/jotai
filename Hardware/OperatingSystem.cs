@@ -12,7 +12,7 @@ using System;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal static class OperatingSystem {
 
     public static bool Is64BitOperatingSystem() {

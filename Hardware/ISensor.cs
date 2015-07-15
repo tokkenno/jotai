@@ -10,9 +10,9 @@
 
 using System;
 using System.Collections.Generic;
-using OpenHardwareMonitor.Collections;
+using Jotai.Collections;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
 
   public enum SensorType {
     Voltage, // V

@@ -16,7 +16,7 @@ using System.Security.AccessControl;
 using System.Threading;
 using System.Text;
 
-namespace OpenHardwareMonitor.Hardware {
+namespace Jotai.Hardware {
   internal static class Ring0 {
 
     private static KernelDriver driver;
@@ -74,7 +74,7 @@ namespace OpenHardwareMonitor.Hardware {
     }
 
     private static bool ExtractDriver(string fileName) {
-      string resourceName = "OpenHardwareMonitor.Hardware." +
+      string resourceName = "Jotai.Hardware." +
         (OperatingSystem.Is64BitOperatingSystem() ? "WinRing0x64.sys" : 
         "WinRing0.sys");
 

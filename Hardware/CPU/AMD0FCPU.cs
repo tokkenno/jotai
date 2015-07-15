@@ -14,7 +14,7 @@ using System.Globalization;
 using System.Text;
 using System.Threading;
 
-namespace OpenHardwareMonitor.Hardware.CPU {
+namespace Jotai.Hardware.CPU {
   internal sealed class AMD0FCPU : AMDCPU {
     
     private readonly Sensor[] coreTemperatures;
