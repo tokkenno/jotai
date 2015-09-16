@@ -8,40 +8,47 @@
 	
 */
 
+using Newtonsoft.Json.Linq;
+
 namespace Jotai.Hardware {
 
   public delegate void SensorEventHandler(ISensor sensor);
-  
-  public enum HardwareType {
-    Mainboard,
-    SuperIO,
-    CPU,
-    RAM,
-    GpuNvidia,
-    GpuAti,    
-    TBalancer,
-    Heatmaster,
-    HDD
-  }
 
-  public interface IHardware : IElement {
+    public enum HardwareType
+    {
+        Mainboard,
+        SuperIO,
+        CPU,
+        RAM,
+        GpuNvidia,
+        GpuAti,
+        TBalancer,
+        Heatmaster,
+        HDD
+    }
 
-    string Name { get; set; }
-    Identifier Identifier { get; }
+    public interface IHardware : IElement
+    {
 
-    HardwareType HardwareType { get; }
+        string Name { get; set; }
+        Identifier Identifier { get; }
 
-    string GetReport();
+        HardwareType HardwareType { get; }
 
-    void Update();
+        string GetReport();
 
-    IHardware[] SubHardware { get; }
+        void Update();
 
-    IHardware Parent { get; }
+        IHardware[] SubHardware { get; }
 
-    ISensor[] Sensors { get; }
+        IHardware Parent { get; }
 
-    event SensorEventHandler SensorAdded;
-    event SensorEventHandler SensorRemoved;
-  }
+        ISensor[] Sensors { get; }
+
+        event SensorEventHandler SensorAdded;
+        event SensorEventHandler SensorRemoved;
+
+        JObject GetJson();
+        JArray GetJsonSensors();
+    }
 }
