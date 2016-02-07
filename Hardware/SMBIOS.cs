@@ -8,6 +8,7 @@
 	
 */
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,8 +17,8 @@ using System.Text;
 
 namespace Jotai.Hardware
 {
-
-    internal class SMBIOS
+    [JsonObject(MemberSerialization.OptIn)]
+    public class SMBIOS
     {
 
         private readonly byte[] raw;
@@ -272,27 +273,30 @@ namespace Jotai.Hardware
             return r.ToString();
         }
 
+        [JsonProperty]
         public BIOSInformation BIOS
         {
             get { return biosInformation; }
         }
 
+        [JsonProperty]
         public SystemInformation System
         {
             get { return systemInformation; }
         }
 
+        [JsonProperty]
         public BaseBoardInformation Board
         {
             get { return baseBoardInformation; }
         }
-
-
+        
         public ProcessorInformation Processor
         {
             get { return processorInformation; }
         }
 
+        [JsonProperty]
         public MemoryDevice[] MemoryDevices
         {
             get { return memoryDevices; }
@@ -344,6 +348,7 @@ namespace Jotai.Hardware
             public ushort Handle { get { return handle; } }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class BIOSInformation : Structure
         {
             private readonly string vendor;
@@ -364,11 +369,14 @@ namespace Jotai.Hardware
                 this.version = GetString(0x05);
             }
 
+            [JsonProperty]
             public string Vendor { get { return vendor; } }
 
+            [JsonProperty]
             public string Version { get { return version; } }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class SystemInformation : Structure
         {
             private readonly string manufacturerName;
@@ -399,17 +407,23 @@ namespace Jotai.Hardware
                 this.family = GetString(0x1A);
             }
 
+            [JsonProperty]
             public string ManufacturerName { get { return manufacturerName; } }
 
+            [JsonProperty]
             public string ProductName { get { return productName; } }
 
+            [JsonProperty]
             public string Version { get { return version; } }
 
+            [JsonProperty]
             public string SerialNumber { get { return serialNumber; } }
 
+            [JsonProperty]
             public string Family { get { return family; } }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class BaseBoardInformation : Structure
         {
 
@@ -439,16 +453,21 @@ namespace Jotai.Hardware
                 this.serialNumber = GetString(0x07).Trim();
             }
 
+            [JsonProperty]
             public string ManufacturerName { get { return manufacturerName; } }
 
+            [JsonProperty]
             public string ProductName { get { return productName; } }
 
+            [JsonProperty]
             public string Version { get { return version; } }
 
+            [JsonProperty]
             public string SerialNumber { get { return serialNumber; } }
 
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class ProcessorInformation : Structure
         {
 
@@ -477,6 +496,7 @@ namespace Jotai.Hardware
             public int ExternalClock { get; private set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class MemoryDevice : Structure
         {
 
@@ -499,16 +519,28 @@ namespace Jotai.Hardware
                 this.speed = GetWord(0x15);
             }
 
+            [JsonProperty]
             public string DeviceLocator { get { return deviceLocator; } }
 
+            [JsonProperty]
             public string BankLocator { get { return bankLocator; } }
+
+            [JsonProperty]
+            public string Manufacturer { get { if (manufacturerName.StartsWith("Manufacturer")) return ""; else return manufacturerName; } }
 
             public string ManufacturerName { get { return manufacturerName; } }
 
+            [JsonProperty]
+            public string Serial { get { if (serialNumber.StartsWith("SerNum")) return ""; else return serialNumber; } }
+
             public string SerialNumber { get { return serialNumber; } }
+
+            [JsonProperty]
+            public string Model { get { if (partNumber.StartsWith("Array")) return ""; else return partNumber; } }
 
             public string PartNumber { get { return partNumber; } }
 
+            [JsonProperty]
             public int Speed { get { return speed; } }
 
         }

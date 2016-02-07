@@ -11,12 +11,13 @@
 using System;
 using Jotai.Collections;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Jotai.Hardware
 {
-    internal abstract class Hardware : IHardware
+    [JsonObject(MemberSerialization.OptIn)]
+    public abstract class Hardware : IHardware
     {
-
         private readonly Identifier identifier;
         protected readonly string name;
         private string customName;
@@ -61,6 +62,10 @@ namespace Jotai.Hardware
                     SensorRemoved(sensor);
         }
 
+        [JsonProperty]
+        public String Id { get { return Identifier.ToString(); } }
+
+        [JsonProperty]
         public string Name
         {
             get
@@ -119,43 +124,6 @@ namespace Jotai.Hardware
         {
             foreach (ISensor sensor in active)
                 sensor.Accept(visitor);
-        }
-
-        public JObject GetJson()
-        {
-            JObject json = new JObject();
-
-            json.Add("id", this.Identifier.ToString());
-            json.Add("type", this.HardwareType.ToString().ToLowerInvariant());
-            json.Add("name", this.Name);
-
-            if (this.Sensors.Length > 0)
-                json.Add("sensors", GetJsonSensors(this.Sensors));
-
-            return json;
-        }
-
-        public static JArray GetJsonSensors(ISensor[] sensors)
-        {
-            JArray sensorsjson = new JArray();
-
-            foreach (Sensor s in sensors)
-            {
-                JObject sensordata = new JObject();
-
-                sensordata.Add("id", s.Identifier.ToString().ToLowerInvariant());
-                sensordata.Add("type", s.SensorType.ToString().ToLowerInvariant());
-                sensordata.Add("name", s.Name);
-
-                sensorsjson.Add(sensordata);
-            }
-
-            return sensorsjson;
-        }
-
-        public JArray GetJsonSensors()
-        {
-            return GetJsonSensors(this.Sensors);
         }
     }
 }

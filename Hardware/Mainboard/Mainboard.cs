@@ -12,10 +12,12 @@ using System;
 using System.Text;
 using Jotai.Hardware.LPC;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace Jotai.Hardware.Mainboard
 {
-    internal class Mainboard : IHardware
+    [JsonObject(MemberSerialization.OptIn)]
+    public class Mainboard : IHardware
     {
         private readonly SMBIOS smbios;
         private readonly string name;
@@ -99,6 +101,7 @@ namespace Jotai.Hardware.Mainboard
                   manufacturer, model, settings);
         }
 
+        [JsonProperty]
         public string Name
         {
             get
@@ -116,9 +119,18 @@ namespace Jotai.Hardware.Mainboard
             }
         }
 
+        [JsonProperty]
+        public String Id { get { return Identifier.ToString(); } }
+
         public Identifier Identifier
         {
             get { return new Identifier("mainboard"); }
+        }
+
+        [JsonProperty(PropertyName = "SystemController")]
+        public SMBIOS BIOS
+        {
+            get { return this.smbios; }
         }
 
         public HardwareType HardwareType
@@ -189,36 +201,6 @@ namespace Jotai.Hardware.Mainboard
         {
             foreach (IHardware hardware in superIOHardware)
                 hardware.Accept(visitor);
-        }
-
-        public JObject GetJson()
-        {
-            JObject json = new JObject();
-
-            json.Add("id", this.Identifier.ToString());
-            json.Add("type", this.HardwareType.ToString().ToLowerInvariant());
-            json.Add("name", this.Name);
-
-            JObject jsoninfo = new JObject();
-
-            if (this.manufacturer != String.Empty)
-                jsoninfo.Add("manufacturer", this.manufacturer);
-
-            if (this.model != String.Empty)
-                jsoninfo.Add("model", this.model);
-
-            if (jsoninfo.Count > 0)
-                json.Add("info", jsoninfo);
-
-            if (this.Sensors.Length > 0)
-                json.Add("sensors", Hardware.GetJsonSensors(this.Sensors));
-
-            return json;
-        }
-
-        public JArray GetJsonSensors()
-        {
-            return Hardware.GetJsonSensors(this.Sensors);
         }
     }
 }

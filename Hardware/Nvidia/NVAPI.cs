@@ -114,12 +114,12 @@ namespace Jotai.Hardware.Nvidia {
   }
 
   [StructLayout(LayoutKind.Sequential)]
-  internal struct NvDisplayHandle {
+  public struct NvDisplayHandle {
     private readonly IntPtr ptr;
   }
 
   [StructLayout(LayoutKind.Sequential)]
-  internal struct NvPhysicalGpuHandle {
+  public struct NvPhysicalGpuHandle {
     private readonly IntPtr ptr;
   }
 

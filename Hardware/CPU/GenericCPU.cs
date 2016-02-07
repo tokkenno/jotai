@@ -8,6 +8,7 @@
 	
 */
 
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,7 +19,8 @@ using System.Threading;
 
 namespace Jotai.Hardware.CPU
 {
-    internal class GenericCPU : Hardware
+    [JsonObject(MemberSerialization.OptIn)]
+    public class GenericCPU : Hardware
     {
 
         protected readonly CPUID[][] cpuid;
@@ -46,6 +48,21 @@ namespace Jotai.Hardware.CPU
         private readonly CPULoad cpuLoad;
         private readonly Sensor totalLoad;
         private readonly Sensor[] coreLoads;
+
+        [JsonProperty]
+        public string Vendor { get { return this.vendor.ToString(); } }
+
+        [JsonProperty]
+        public int Cores { get { return this.coreCount; } }
+
+        [JsonProperty]
+        public uint Family { get { return this.family; } }
+
+        [JsonProperty]
+        public uint Model { get { return this.model; } }
+
+        [JsonProperty]
+        public uint Stepping { get { return this.stepping; } }
 
         protected string CoreString(int i)
         {
@@ -132,8 +149,8 @@ namespace Jotai.Hardware.CPU
             string s;
             switch (vendor)
             {
-                case Vendor.AMD: s = "amdcpu"; break;
-                case Vendor.Intel: s = "intelcpu"; break;
+                case CPU.Vendor.AMD: s = "amdcpu"; break;
+                case CPU.Vendor.Intel: s = "intelcpu"; break;
                 default: s = "genericcpu"; break;
             }
             return new Identifier(s,
@@ -220,8 +237,8 @@ namespace Jotai.Hardware.CPU
 
             switch (vendor)
             {
-                case Vendor.AMD: r.AppendLine("AMD CPU"); break;
-                case Vendor.Intel: r.AppendLine("Intel CPU"); break;
+                case CPU.Vendor.AMD: r.AppendLine("AMD CPU"); break;
+                case CPU.Vendor.Intel: r.AppendLine("Intel CPU"); break;
                 default: r.AppendLine("Generic CPU"); break;
             }
 

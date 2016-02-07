@@ -47,8 +47,5 @@ namespace Jotai.Hardware {
 
         event SensorEventHandler SensorAdded;
         event SensorEventHandler SensorRemoved;
-
-        JObject GetJson();
-        JArray GetJsonSensors();
     }
 }
